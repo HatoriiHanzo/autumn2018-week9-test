@@ -19,4 +19,33 @@ class HeroController extends Controller
         $view->hero = $hero;
         return $view;
     }
+
+
+    public function index()
+    {
+        $hero = Hero::orderby('names', 'asc')->get();
+        return view($hero);
+    }
+
+    
+
+        public function create()
+         {
+             
+             
+               $emergencies->subject = Input::get('subject');
+               $emergencies->description = Input::get('description');
+         
+               $emergencies->save();
+
+            return Redirect::back();
+
+
+
+    }
+
+
+
+
+
 }
